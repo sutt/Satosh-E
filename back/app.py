@@ -1,6 +1,6 @@
 import os, sys
 import argparse
-import tempfile
+# import tempfile
 import requests
 
 from flask import (
@@ -25,18 +25,33 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def index():
+    return render_template(
+        'index.html',
+    )
+
 @app.route('/ok')
 def ok():
     return 'Satosh-E is running!'
 
+
+
 @app.route('/generate')
 def generate():
-    
     text_prompt = request.args.get('prompt', 'Gorilla holding a bitcoin')
     img_url = call_dalle_api(text_prompt)
-    img_response = requests.get(img_url)
+    # img_response = requests.get(img_url)
+    return render_template(
+        'gen-result.html',
+        img_url=img_url,
+        s_prompt=text_prompt,
+    )
 
+@app.route('/download_image')
+def download_image():
     # Save the image to a temporary file
+    
     temp_dir = tempfile.mkdtemp()
     temp_filename = os.path.join(temp_dir, 'generated_image.png')
     with open(temp_filename, 'wb') as f:
