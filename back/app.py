@@ -40,6 +40,12 @@ def add_security_headers(resp):
 def ok():
     return 'Satosh-E is running!'
 
+@app.route('/genform')
+def generate_form():
+    return render_template(
+        'gen-form.html',
+        s_initial_prompt='Gorilla holding a bitcoin',
+    )
 
 
 
