@@ -9,13 +9,13 @@ from flask import (
     render_template,
     jsonify,
 )
-from flask_cors import CORS
-from dotenv import load_dotenv
+#from flask_cors import CORS
+#from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+#CORS(app)
 
 @app.route('/ok')
 def ok():
