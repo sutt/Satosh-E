@@ -1,12 +1,12 @@
 import os, sys
-
 import requests
-
 from dotenv import load_dotenv
-
+from flask import jsonify
+from .utils import req_endpoint
 load_dotenv()
 
-dalle_api_key = os.environ.get('OPENAI_API_KEY')
+dalle_api_key   = os.environ.get('OPENAI_API_KEY')
+invoice_key     = os.environ.get('INVOICE_KEY')
 
 def call_midjourney_api(text_prompt):
     pass
@@ -43,7 +43,57 @@ def call_dalle_api(
 
     return img_url
 
+
+def get_wallet_balance():
+    pass
+
+def get_payments(wlt_invoice_key):
     
+    endpoint = 'api/v1/payments'
+
+    opt = {
+        'headers': {
+            'X-Api-Key': wlt_invoice_key
+        }
+    }
+
+    data = req_endpoint(endpoint, opt)
+
+    # lots you can do with this data, right now
+    # we just use this to unclear a cached account balance
+    try:
+        return len(data)
+    except:
+        return None
+
+def get_tip_balance():
+
+    amt = get_balance_and_key()
+    
+    data = {'balance': amt}
+    
+    return jsonify(data)
+
+def get_balance(wlt_invoice_key):
+    
+    endpoint = 'api/v1/wallet'
+
+    opt = {
+        'headers': {
+            'X-Api-Key': wlt_invoice_key
+        }
+    }
+
+    data = req_endpoint(endpoint, opt)
+    
+    if data is None: return None
+    
+    amount_millisats = data.get('balance') 
+    amount_sats = int(amount_millisats / 1000)
+
+    return amount_sats
+
+
 if __name__ == '__main__':
     
     import argparse    
