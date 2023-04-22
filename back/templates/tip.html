@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Box-AI</title>
+</head>
+<body>
+    <h1>Tip Page</h1>
+    
+    <h3>Account Info:</h3>
+    
+        <p>
+            <span class="label">Current Balance: </span>
+            <span id="balance-data">loading</p>
+        </p>
+        
+        <p>
+            <span class="label">Admin Key: </span>
+            <span >{{admin_key}}</p>
+        </p>
+    
+    <h3>Deposit Funds to Node</h3>
+        
+        <p>Scan qr with a lightning wallet and deposit sats.</p>
+        <p>Then head to 
+            <a href="../generate/{{admin_key}}">here</a> 
+            to generate an image with these credits
+        </p>
+
+        <img 
+            src="{{img}}"
+            style="height: 300px; width: 300px;"
+            >
+
+    <script>
+        const url = '/get_balance'
+        const balanceData = document.getElementById('balance-data')
+        console.log("in script...")
+        pollBalance()
+        setInterval(pollBalance, 5000)
+
+        function pollBalance() {
+            
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    balance = data.balance;
+                    console.log(balance)
+                    balanceData.innerText = balance
+                })
+        }
+        
+    </script>
+</body>
+</html>

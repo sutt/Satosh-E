@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Box-AI</title>
+</head>
+<body>
+    <h1>Generate Img</h1>
+    <h3>{{s_payment}}</h3>
+    
+    <form action="http://localhost:5000/generate" method="GET">
+        
+        <label for="prompt">Prompt: </label>
+        <input type="text" id="prompt" name="prompt" value="fat cat">
+        <label for="steps">Steps: </label>
+        <input type="number" id="steps" name="steps" value="2">
+        <label for="seed">Seed: </label>
+        <input type="number" id="seed" name="seed" value="1">
+        <input type="submit">
+    </form>
+    
+    <div id="main">
+        
+        <!-- {% if img %}
+        
+        <img 
+            style="left:200px; top:200px;position:absolute;"
+            src="{{img}}"> -->
+<!--   
+        {% else %}
+        
+        <p>no image yet</p>
+        
+        {% endif %} -->
+        
+    </main>
+    
+</body>
+</html>
