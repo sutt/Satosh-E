@@ -60,42 +60,28 @@ def tip():
         admin_key=MOCK_ADMIN_KEY,   #remove security risk
         )
 
-@app.route('/generate2')
-def generate2():
-    return render_template(
-    'generate.html'
-    )
-
-
-@app.route('/generate3')
-def generate3():
-    return render_template(
-    'gen.html'
-    )
-
 
 @app.route('/generate')
 def generate():
-    text_prompt = request.args.get('prompt', 'Gorilla holding a bitcoin')
-    img_url = call_dalle_api(text_prompt)
-    # img_response = requests.get(img_url)
-    return render_template(
-        'gen-result.html',
-        img_url=img_url,
-        s_prompt=text_prompt,
-    )
-
-@app.route('/download_image')
-def download_image():
-    # Save the image to a temporary file
     
-    temp_dir = tempfile.mkdtemp()
-    temp_filename = os.path.join(temp_dir, 'generated_image.png')
-    with open(temp_filename, 'wb') as f:
-        f.write(img_response.content)
-
-    # Return the image using send_from_directory
-    return send_from_directory(temp_dir, 'generated_image.png', mimetype='image/png', as_attachment=True)
+    text_prompt = request.args.get('prompt', None)
+    print(text_prompt)
+    
+    if text_prompt is None:
+        return render_template(
+            'gen.html',
+            img_url=None,
+            s_prompt='Gorilla holding a bitcoin'
+        )
+    
+    else:
+        img_url = call_dalle_api(text_prompt)
+        print(img_url)
+        return render_template(
+            'gen.html',
+            img_url=img_url,
+            s_prompt=text_prompt,
+        )
 
 
 if __name__ == '__main__':
