@@ -66,13 +66,7 @@ def get_payments(wlt_invoice_key):
     except:
         return None
 
-def get_tip_balance():
 
-    amt = get_balance_and_key()
-    
-    data = {'balance': amt}
-    
-    return jsonify(data)
 
 def get_balance(wlt_invoice_key):
     
@@ -92,6 +86,31 @@ def get_balance(wlt_invoice_key):
     amount_sats = int(amount_millisats / 1000)
 
     return amount_sats
+
+def get_payments(wlt_invoice_key):
+    
+    endpoint = 'api/v1/payments'
+
+    opt = {
+        'headers': {
+            'X-Api-Key': wlt_invoice_key
+        }
+    }
+
+    data = req_endpoint(endpoint, opt)
+
+    # lots you can do with this data, right now
+    # we just use this to unclear a cached account balance
+    try:
+        return len(data)
+    except:
+        return None
+
+def get_balance_and_key():
+    # TODO - remove this, its a security risk
+    _   = get_payments(invoice_key)
+    amt = get_balance(invoice_key)
+    return amt 
 
 
 if __name__ == '__main__':
