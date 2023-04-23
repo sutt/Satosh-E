@@ -89,7 +89,7 @@ def generate():
         text_prompt = 'Gorilla holding a bitcoin'
 
     return render_template(
-        'gen.html',
+        'gen3.html',
         img_url=img_url,
         s_prompt=text_prompt,
         qr_img=dataurl,
