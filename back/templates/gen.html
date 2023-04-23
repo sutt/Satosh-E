@@ -1,175 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Front</title>
 
-        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/img/favicon.ico')}}" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Front</title>
 
-        <script src="{{ url_for('static', filename='js/all.js') }}"></script>
- 
-        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Satoshi Nakamoto</span>
-               
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#generate">Generate Image</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tips">Tips</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Satoshi
-                        <span class="text-primary">Nakamoto</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        3542 None Street · Kyoto, Japan 80810 · (317) 585-8468 ·
-                        <a href="mailto:satoshi@email.com">satoshi@email.com</a>
-                    </div>
-                    <p class="lead mb-5">I dislike banks and the centralized capitals</p>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/img/favicon.ico')}}" />
 
+    <script src="{{ url_for('static', filename='js/all.js') }}"></script>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Satoshi Nakamoto</span>
+
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="{{url_for('static', filename='assets/img/profile.png')}}" alt="..." /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">📄 About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#generate">🎨 Generate Image</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tips">💡 Tips</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#specs">🔧 Specs</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+        <!-- About-->
+        <section class="resume-section" id="about">
+            <div class="resume-section-content">
+                <h1 class="mb-0">
+                    Satosh-<span class="text-primary">E</span>
+                </h1>
+                <div class="subheading mb-5">
+                    MIT BITCOIN HACKATON 2023
                 </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Image -->
-            <section class="resume-section" id="generate">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Generate Image</h2>
+                <p class="lead mb-5"><strong>Project description:</strong> Generative AI images with micro-payments
+                    through Lightning Network! 🚀⚡🎨</p>
+                <!-- Team -->
+                <div class="team">
+                    <h5 class="mb-4">Team 👩‍💻👨‍💻</h5>
+                    <ul>
+                        <li>William - <a href="https://devpost.com/William" target="_blank">DevPost </a></li>
+                        <li>Frank - <a href="https://devpost.com/Frank" target="_blank">DevPost</a></li>
+                        <li>Yen - <a href="https://devpost.com/Yen" target="_blank">DevPost</a></li>
+                        <li>Johnathan - <a href="https://devpost.com/Johnathan" target="_blank">DevPost</a></li>
+                        <li>Enrique - <a href="https://devpost.com/Enrique" target="_blank">DevPost</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Image -->
+        <section class="resume-section" id="generate">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Generate Image</h2>
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Information</h3>
-                            
-                            <p>Describe the image you would like to generate on the "Prompt" text box. Click submit and your image will be genrated after a few seconds.</p>
-                            <p>Cost of the service 1 SAT</p>
-                        </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Information</h3>
+
+                        <p>Describe the image you would like to generate on the "Prompt" text box. Click submit and your
+                            image will be genrated after a few seconds.</p>
+                        <p>Cost of the service 1 SAT</p>
                     </div>
+                </div>
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Image</h3>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Image</h3>
 
-                                {% if img %}
-                                
-                                <img 
-                                    style="left:200px; top:200px;position:absolute;"
-                                    src="{{img}}">
-                          
-                                {% else %}
-                                
-                                
-                                <img 
-                                    style="left:200px; top:200px;"
-                                    src="{{url_for('static', filename='assets/img/gor.png')}}">
-                                
-                                
-                                {% endif %}
+                        {% if img %}
 
-                       </div>
+                        <img style="left:200px; top:200px;position:absolute;" src="{{img}}">
+
+                        {% else %}
+
+
+                        <img style="left:200px; top:200px;" src="{{url_for('static', filename='assets/img/gor.png')}}">
+
+
+                        {% endif %}
+
                     </div>
+                </div>
 
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            
-                            <h3>{{s_payment}}</h3>
-                            
-                            <form action="http://localhost:5000/generate3" method="GET">
-                                
-                                <label for="prompt">Prompt: </label>
-                                <input type="text" class="form-control mb-2" id="prompt" name="prompt" value="Gorilla Holding a Bitcoin">
-                                <!-- <label for="steps">Steps: </label>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+
+                        <h3>{{s_payment}}</h3>
+
+                        <form action="http://localhost:5000/generate3" method="GET">
+
+                            <label for="prompt">Prompt: </label>
+                            <input type="text" class="form-control mb-2" id="prompt" name="prompt"
+                                value="Gorilla Holding a Bitcoin">
+                            <!-- <label for="steps">Steps: </label>
                                 <input type="number" id="steps" name="steps" value="2">
                                 <label for="seed">Seed: </label>
                                 <input type="number" id="seed" name="seed" value="1"> -->
-                                <input type="submit" class="btn btn-secondary">
-                            </form>
-                        
-                        
-                        </div>
+                            <input type="submit" class="btn btn-secondary">
+                        </form>
+
 
                     </div>
-                    
+
                 </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Tips-->
-            <section class="resume-section" id="tips">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Tips</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Account Info:</h3>
-                            <p>
-                                <span class="label">Current Balance: </span>
-                                <span id="balance-data">loading</p>
-                            </p>
-                            
-                            <p>
-                                <span class="label">Admin Key: </span>
-                                <span >{{admin_key}}</p>
-                            </p>
-                        </div>
 
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Tips-->
+        <section class="resume-section" id="tips">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Tips</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Account Info:</h3>
+                        <p>
+                            <span class="label">Current Balance: </span>
+                            <span id="balance-data">loading
+                        </p>
+                        </p>
+
+                        <p>
+                            <span class="label">Admin Key: </span>
+                            <span>{{admin_key}}
+                        </p>
+                        </p>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Deposit Funds to Node</h3>
-                            <p>Scan qr with a lightning wallet and deposit sats.</p>
-                            <p>Then head to 
-                                <a href="../generate/{{admin_key}}">here</a> 
-                                to generate an image with these credits
-                            </p>
-                    
-                            <img 
-                                src="{{img}}"
-                                style="height: 300px; width: 300px;"
-                                >
+
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Deposit Funds to Node</h3>
+                        <p>Scan qr with a lightning wallet and deposit sats.</p>
+                        <p>Then head to
+                            <a href="../generate/{{admin_key}}">here</a>
+                            to generate an image with these credits
+                        </p>
+
+                        <img src="{{img}}" style="height: 300px; width: 300px;">
                     </div>
                 </div>
-            </section>
-        </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Specs -->
+        <section class="resume-section" id="specs">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Specs</h2>
+                <p><strong>Tracks:</strong></p>
+                <ul>
+                    <li>- <a href="https://www.notion.so/Tracks-3a63646e084146c288d2d6a14a170b5e"
+                            target="_blank">Lightning Network</a></li>
+                </ul>
+                <p><strong>Architecture:</strong< /p>
+                        <ul>
+                            <li>- HTML</li>
+                            <li>- Flask for backend</li>
+                            <li>- Lightning Network integration</li>
+                            <li>- Dalle-2 AI model for image generation</li>
+                        </ul>
+                        <img class="img-fluid mx-auto mb-2"
+                            src="{{url_for('static', filename='assets/img/architecturepng.png')}}" alt="..." />
+            </div>
+        </section>
+    </div>
 
-        <script>
-            const url = '/get_balance'
-            const balanceData = document.getElementById('balance-data')
-            console.log("in script...")
-            pollBalance()
-            setInterval(pollBalance, 5000)
-    
-            function pollBalance() {
-                
-                fetch(url)
-                    .then(res => res.json())
-                    .then(data => {
-                        balance = data.balance;
-                        console.log(balance)
-                        balanceData.innerText = balance
-                    })
-            }
-            
-        </script>
-        <!-- Bootstrap core JS-->
-        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-        <!-- Core theme JS-->
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script>
+        const url = '/get_balance'
+        const balanceData = document.getElementById('balance-data')
+        console.log("in script...")
+        pollBalance()
+        setInterval(pollBalance, 5000)
 
-    </body>
+        function pollBalance() {
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    balance = data.balance;
+                    console.log(balance)
+                    balanceData.innerText = balance
+                })
+        }
+
+    </script>
+    <!-- Bootstrap core JS-->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+</body>
+
 </html>
