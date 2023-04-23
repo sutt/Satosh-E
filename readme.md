@@ -1,5 +1,6 @@
+![alt text](https://github.com/sutt/Satosh-E/blob/main/back/static/assets/img/cover.png?raw=true)
 # Satosh-E
-
+![alt text](https://github.com/sutt/Satosh-E/blob/main/back/static/assets/img/profile.png?raw=true)
 ## Project Description
 
 Satosh-E is a unique application that generates AI-generated images and facilitates micro-payments through the Lightning Network.
