@@ -41,21 +41,32 @@ To set up the Satosh-E project on your local machine, follow these instructions:
 2. Navigate to the project directory:
 
    ```
-   cd Satosh-E
+   cd Satosh-E\back
+   ```
+   
+3. Create virtualenv:
+
+   ```
+   python -m venv venv
    ```
 
-3. Install the required dependencies:
+4. Activate virtualenv:
+
+   ```
+   venv\Scripts\activate
+   ```
+
+5. Install the required dependencies:
 
    ```
    pip install -r requirements.txt
    ```
 
-4. Set up your Lightning Network configuration (follow the [Lightning Network documentation](https://lightning.network) for more information).
-
-5. Run the application:
+6. Run the application:
 
    ```
-   python main.py
+   python app.py
+   # goto http://localhost:5000/ok
    ```
 
 ## Usage
