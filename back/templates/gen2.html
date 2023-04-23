@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Front</title>
+
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/img/favicon.ico')}}" />
+
+        <script src="{{ url_for('static', filename='js/all.js') }}"></script>
+ 
+        <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}"> -->
+        <link rel="stylesheet" href="../static/css/styles.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Satosh-E: Lightning + AI</span>
+               
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#generate">Generate Image</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tips">Tips</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        Satosh-E
+                        <span class="text-primary">Lightning + AI</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        3542 None Street · Kyoto, Japan 80810 · (317) 585-8468 ·
+                        <a href="mailto:satoshi@email.com">WILL!!!!</a>
+                    </div>
+                    <p class="lead mb-5">I dislike banks and the centralized capitals</p>
+
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Image -->
+            <section class="resume-section" id="generate">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Generate Image</h2>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Cost: 10 sats</h3>
+                            
+                            <p>Describe the image you would like to generate on the "Prompt" text box. Click submit and your image will be genrated after five seconds.</p>
+                            <p>If you can't click the submit button, you need to add at least 10 sats to the pot!</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Image</h3>
+                                
+                                {% if img_url %}
+                                
+                                <img 
+                                    style="left:200px; top:200px;"
+                                    src="{{img_url}}">
+                          
+                                {% else %}
+                                
+                                
+                                <img 
+                                    style="left:200px; top:200px;"
+                                    src="{{url_for('static', filename='assets/img/gor.png')}}">
+                                
+                                
+                                {% endif %}
+
+                       </div>
+                    </div>
+
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            
+                            <h3>{{s_payment}}</h3>
+                            
+                            <form action="/#generate" method="GET">
+                                
+                                <label for="prompt">Prompt: </label>
+                                <input type="text" class="form-control mb-2" id="prompt" name="prompt" value="{{s_prompt}}">
+                                <!-- <label for="steps">Steps: </label>
+                                <input type="number" id="steps" name="steps" value="2">
+                                <label for="seed">Seed: </label>
+                                <input type="number" id="seed" name="seed" value="1"> -->
+                                <input type="submit" class="btn btn-secondary" id="prompt-submit" disabled>
+                            </form>
+                        
+                        
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Tips-->
+            <section class="resume-section" id="tips">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Tips</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            
+                            <h3 class="mb-0">
+                                Current Balance:
+                                <span id="balance-data"> loading...</p>
+                            </h3>
+                            <p>(in satoshis)</p>
+                            <p>Note: in testing we saw repeated failures of payments less than 30 sats</p>
+                            
+                            
+                        </div>
+
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Deposit Funds to Node</h3>
+                            <p>Scan qr with a lightning wallet and deposit sats.</p>
+                            <img 
+                                src="{{qr_img}}"
+                                style="height: 300px; width: 300px;"
+                                >
+                                <p>This is static LN-URL which will allow you to chose the amount you send to tip.</p>
+                                <p>Unfortunately, LN-URL is not currently supported in many Lightning Wallets :(</p>
+                                <p>We've tested and verified this is working for Phoenix Wallet(</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            const url = '/get_balance'
+            const balanceData = document.getElementById('balance-data')
+            const submitButton = document.getElementById('prompt-submit')
+            console.log("in script...")
+            pollBalance()
+            setInterval(pollBalance, 5000)
+    
+            function pollBalance() {
+                
+                fetch(url)
+                    .then(res => res.json())
+                    .then(data => {
+                        balance = data.balance;
+                        console.log(balance)
+                        balanceData.innerText = balance
+                        if (balance >= 10) {
+                            balanceData.style.color = 'green' 
+                            submitButton.disabled = false
+                        } else {
+                            balanceData.style.color = 'red'
+                            submitButton.disabled = true
+                        }
+                    })
+            }
+            
+        </script>
+        <!-- Bootstrap core JS-->
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+    </body>
+</html>
